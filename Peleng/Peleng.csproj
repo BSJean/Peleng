@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1515C86-493C-4F95-B823-3B65918BA0D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Peleng</RootNamespace>
+    <AssemblyName>Peleng</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addAssembly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addAssembly.Designer.cs">
+      <DependentUpon>addAssembly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="computeRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="computeRate.Designer.cs">
+      <DependentUpon>computeRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemMaterial.Designer.cs">
+      <DependentUpon>ItemMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listMaterial.Designer.cs">
+      <DependentUpon>listMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PelengDataSet.cs">
+      <DependentUpon>PelengDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PelengDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PelengDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PelengDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PelengDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reportItemEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportItemEnter.Designer.cs">
+      <DependentUpon>reportItemEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specificationEnterNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specificationEnterNumber.Designer.cs">
+      <DependentUpon>specificationEnterNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specificationForm.Designer.cs">
+      <DependentUpon>specificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specificationWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specificationWork.Designer.cs">
+      <DependentUpon>specificationWork.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addAssembly.resx">
+      <DependentUpon>addAssembly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="computeRate.resx">
+      <DependentUpon>computeRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemMaterial.resx">
+      <DependentUpon>ItemMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listMaterial.resx">
+      <DependentUpon>listMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="reportItemEnter.resx">
+      <DependentUpon>reportItemEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specificationEnterNumber.resx">
+      <DependentUpon>specificationEnterNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specificationForm.resx">
+      <DependentUpon>specificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specificationWork.resx">
+      <DependentUpon>specificationWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="PelengDataSet.xsc">
+      <DependentUpon>PelengDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PelengDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PelengDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PelengDataSet.xss">
+      <DependentUpon>PelengDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="PelengDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PelengDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PelengEntities.datasource">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Peleng.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Peleng_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Peleng.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PelengModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="PelengModelStoreContainer">
+          <EntitySet Name="ВспомогательныеМатериалы" EntityType="PelengModel.Store.ВспомогательныеМатериалы" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ВходящиеСборки" EntityType="PelengModel.Store.ВходящиеСборки" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Детали" EntityType="PelengModel.Store.Детали" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="МаркиМатериала" EntityType="PelengModel.Store.МаркиМатериала" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Маршруты" EntityType="PelengModel.Store.Маршруты" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Материалы" EntityType="PelengModel.Store.Материалы" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Подразделения" EntityType="PelengModel.Store.Подразделения" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Профили" EntityType="PelengModel.Store.Профили" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="СборкаВспМатериал" EntityType="PelengModel.Store.СборкаВспМатериал" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Сборки" EntityType="PelengModel.Store.Сборки" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="СборкиДетали" EntityType="PelengModel.Store.СборкиДетали" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__ВходящиеС__Номер__276EDEB3" Association="PelengModel.Store.FK__ВходящиеС__Номер__276EDEB3">
+            <End Role="Сборки" EntitySet="Сборки" />
+            <End Role="ВходящиеСборки" EntitySet="ВходящиеСборки" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Детали__286302EC" Association="PelengModel.Store.FK__Детали__286302EC">
+            <End Role="Маршруты" EntitySet="Маршруты" />
+            <End Role="Детали" EntitySet="Детали" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Детали__Материал__29572725" Association="PelengModel.Store.FK__Детали__Материал__29572725">
+            <End Role="Материалы" EntitySet="Материалы" />
+            <End Role="Детали" EntitySet="Детали" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Маршруты__НомерП__2A4B4B5E" Association="PelengModel.Store.FK__Маршруты__НомерП__2A4B4B5E">
+            <End Role="Подразделения" EntitySet="Подразделения" />
+            <End Role="Маршруты" EntitySet="Маршруты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Материалы__Марка__2C3393D0" Association="PelengModel.Store.FK__Материалы__Марка__2C3393D0">
+            <End Role="МаркиМатериала" EntitySet="МаркиМатериала" />
+            <End Role="Материалы" EntitySet="Материалы" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Материалы__Профи__2B3F6F97" Association="PelengModel.Store.FK__Материалы__Профи__2B3F6F97">
+            <End Role="Профили" EntitySet="Профили" />
+            <End Role="Материалы" EntitySet="Материалы" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СборкаВсп__ВспМа__2D27B809" Association="PelengModel.Store.FK__СборкаВсп__ВспМа__2D27B809">
+            <End Role="ВспомогательныеМатериалы" EntitySet="ВспомогательныеМатериалы" />
+            <End Role="СборкаВспМатериал" EntitySet="СборкаВспМатериал" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СборкаВсп__Номер__2E1BDC42" Association="PelengModel.Store.FK__СборкаВсп__Номер__2E1BDC42">
+            <End Role="Сборки" EntitySet="Сборки" />
+            <End Role="СборкаВспМатериал" EntitySet="СборкаВспМатериал" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сборки__2F10007B" Association="PelengModel.Store.FK__Сборки__2F10007B">
+            <End Role="Маршруты" EntitySet="Маршруты" />
+            <End Role="Сборки" EntitySet="Сборки" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СборкиДет__Номер__300424B4" Association="PelengModel.Store.FK__СборкиДет__Номер__300424B4">
+            <End Role="Детали" EntitySet="Детали" />
+            <End Role="СборкиДетали" EntitySet="СборкиДетали" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СборкиДет__Номер__30F848ED" Association="PelengModel.Store.FK__СборкиДет__Номер__30F848ED">
+            <End Role="Сборки" EntitySet="Сборки" />
+            <End Role="СборкиДетали" EntitySet="СборкиДетали" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ВспомогательныеМатериалы">
+          <Key>
+            <PropertyRef Name="ВспМатериалID" />
+          </Key>
+          <Property Name="Наименование" Type="varchar(max)" Nullable="false" />
+          <Property Name="ВспМатериалID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Плотность" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ВходящиеСборки">
+          <Key>
+            <PropertyRef Name="НомерВхСборки" />
+            <PropertyRef Name="НомерСборки" />
+          </Key>
+          <Property Name="НомерВхСборки" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="НомерСборки" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Количество" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Детали">
+          <Key>
+            <PropertyRef Name="НомерДетали" />
+          </Key>
+          <Property Name="Наименование" Type="varchar(max)" Nullable="false" />
+          <Property Name="НомерДетали" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="МатериалID" Type="int" Nullable="false" />
+          <Property Name="НормаРасхода" Type="float" Nullable="false" />
+          <Property Name="ВыходДеталей" Type="int" Nullable="false" />
+          <Property Name="ДлинаЗаготовки" Type="float" Nullable="false" />
+          <Property Name="ШиринаЗаготовки" Type="float" />
+          <Property Name="ПорядковыйНомер" Type="int" />
+          <Property Name="МаршрутID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="МаркиМатериала">
+          <Key>
+            <PropertyRef Name="МаркаID" />
+          </Key>
+          <Property Name="НаименованиеМарки" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="МаркаID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Плотность" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Маршруты">
+          <Key>
+            <PropertyRef Name="ПорядковыйНомер" />
+            <PropertyRef Name="МаршрутID" />
+          </Key>
+          <Property Name="ПорядковыйНомер" Type="int" Nullable="false" />
+          <Property Name="МаршрутID" Type="int" Nullable="false" />
+          <Property Name="НомерПодразделения" Type="varchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Материалы">
+          <Key>
+            <PropertyRef Name="МатериалID" />
+          </Key>
+          <Property Name="НаименованиеМатериала" Type="varchar(max)" Nullable="false" />
+          <Property Name="МатериалID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Габарит" Type="float" Nullable="false" />
+          <Property Name="Ширина" Type="int" />
+          <Property Name="Длина" Type="int" />
+          <Property Name="МаркаID" Type="int" />
+          <Property Name="ПрофильID" Type="int" />
+        </EntityType>
+        <EntityType Name="Подразделения">
+          <Key>
+            <PropertyRef Name="НомерПодразделения" />
+          </Key>
+          <Property Name="НазваниеУчастка" Type="varchar(max)" Nullable="false" />
+          <Property Name="НомерПодразделения" Type="varchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Профили">
+          <Key>
+            <PropertyRef Name="ПрофильID" />
+          </Key>
+          <Property Name="ВидПрофиля" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ПрофильID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="СборкаВспМатериал">
+          <Key>
+            <PropertyRef Name="НомерСборки" />
+            <PropertyRef Name="ВспМатериалID" />
+          </Key>
+          <Property Name="НомерСборки" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="НормаРасхода" Type="float" Nullable="false" />
+          <Property Name="ВспМатериалID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Сборки">
+          <Key>
+            <PropertyRef Name="НомерСборки" />
+          </Key>
+          <Property Name="Наименование" Type="varchar(max)" Nullable="false" />
+          <Property Name="НомерСборки" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ПорядковыйНомер" Type="int" />
+          <Property Name="МаршрутID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="СборкиДетали">
+          <Key>
+            <PropertyRef Name="НомерДетали" />
+            <PropertyRef Name="НомерСборки" />
+          </Key>
+          <Property Name="НомерДетали" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Количество" Type="int" Nullable="false" />
+          <Property Name="НомерСборки" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__ВходящиеС__Номер__276EDEB3">
+          <End Role="Сборки" Type="PelengModel.Store.Сборки" Multiplicity="1" />
+          <End Role="ВходящиеСборки" Type="PelengModel.Store.ВходящиеСборки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сборки">
+              <PropertyRef Name="НомерСборки" />
+            </Principal>
+            <Dependent Role="ВходящиеСборки">
+              <PropertyRef Name="НомерСборки" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Детали__286302EC">
+          <End Role="Маршруты" Type="PelengModel.Store.Маршруты" Multiplicity="0..1" />
+          <End Role="Детали" Type="PelengModel.Store.Детали" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Маршруты">
+              <PropertyRef Name="ПорядковыйНомер" />
+              <PropertyRef Name="МаршрутID" />
+            </Principal>
+            <Dependent Role="Детали">
+              <PropertyRef Name="ПорядковыйНомер" />
+              <PropertyRef Name="МаршрутID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Детали__Материал__29572725">
+          <End Role="Материалы" Type="PelengModel.Store.Материалы" Multiplicity="1" />
+          <End Role="Детали" Type="PelengModel.Store.Детали" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Материалы">
+              <PropertyRef Name="МатериалID" />
+            </Principal>
+            <Dependent Role="Детали">
+              <PropertyRef Name="МатериалID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Маршруты__НомерП__2A4B4B5E">
+          <End Role="Подразделения" Type="PelengModel.Store.Подразделения" Multiplicity="1" />
+          <End Role="Маршруты" Type="PelengModel.Store.Маршруты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Подразделения">
+              <PropertyRef Name="НомерПодразделения" />
+            </Principal>
+            <Dependent Role="Маршруты">
+              <PropertyRef Name="НомерПодразделения" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Материалы__Марка__2C3393D0">
+          <End Role="МаркиМатериала" Type="PelengModel.Store.МаркиМатериала" Multiplicity="0..1" />
+          <End Role="Материалы" Type="PelengModel.Store.Материалы" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="МаркиМатериала">
+              <PropertyRef Name="МаркаID" />
+            </Principal>
+            <Dependent Role="Материалы">
+              <PropertyRef Name="МаркаID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Материалы__Профи__2B3F6F97">
+          <End Role="Профили" Type="PelengModel.Store.Профили" Multiplicity="0..1" />
+          <End Role="Материалы" Type="PelengModel.Store.Материалы" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Профили">
+              <PropertyRef Name="ПрофильID" />
+            </Principal>
+            <Dependent Role="Материалы">
+              <PropertyRef Name="ПрофильID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СборкаВсп__ВспМа__2D27B809">
+          <End Role="ВспомогательныеМатериалы" Type="PelengModel.Store.ВспомогательныеМатериалы" Multiplicity="1" />
+          <End Role="СборкаВспМатериал" Type="PelengModel.Store.СборкаВспМатериал" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ВспомогательныеМатериалы">
+              <PropertyRef Name="ВспМатериалID" />
+            </Principal>
+            <Dependent Role="СборкаВспМатериал">
+              <PropertyRef Name="ВспМатериалID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СборкаВсп__Номер__2E1BDC42">
+          <End Role="Сборки" Type="PelengModel.Store.Сборки" Multiplicity="1" />
+          <End Role="СборкаВспМатериал" Type="PelengModel.Store.СборкаВспМатериал" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сборки">
+              <PropertyRef Name="НомерСборки" />
+            </Principal>
+            <Dependent Role="СборкаВспМатериал">
+              <PropertyRef Name="НомерСборки" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сборки__2F10007B">
+          <End Role="Маршруты" Type="PelengModel.Store.Маршруты" Multiplicity="0..1" />
+          <End Role="Сборки" Type="PelengModel.Store.Сборки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Маршруты">
+              <PropertyRef Name="ПорядковыйНомер" />
+              <PropertyRef Name="МаршрутID" />
+            </Principal>
+            <Dependent Role="Сборки">
+              <PropertyRef Name="ПорядковыйНомер" />
+              <PropertyRef Name="МаршрутID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СборкиДет__Номер__300424B4">
+          <End Role="Детали" Type="PelengModel.Store.Детали" Multiplicity="1" />
+          <End Role="СборкиДетали" Type="PelengModel.Store.СборкиДетали" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Детали">
+              <PropertyRef Name="НомерДетали" />
+            </Principal>
+            <Dependent Role="СборкиДетали">
+              <PropertyRef Name="НомерДетали" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СборкиДет__Номер__30F848ED">
+          <End Role="Сборки" Type="PelengModel.Store.Сборки" Multiplicity="1" />
+          <End Role="СборкиДетали" Type="PelengModel.Store.СборкиДетали" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сборки">
+              <PropertyRef Name="НомерСборки" />
+            </Principal>
+            <Dependent Role="СборкиДетали">
+              <PropertyRef Name="НомерСборки" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PelengModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="PelengEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ВспомогательныеМатериалы" EntityType="PelengModel.ВспомогательныеМатериалы" />
+          <EntitySet Name="ВходящиеСборки" EntityType="PelengModel.ВходящиеСборки" />
+          <EntitySet Name="Детали" EntityType="PelengModel.Детали" />
+          <EntitySet Name="МаркиМатериала" EntityType="PelengModel.МаркиМатериала" />
+          <EntitySet Name="Маршруты" EntityType="PelengModel.Маршруты" />
+          <EntitySet Name="Материалы" EntityType="PelengModel.Материалы" />
+          <EntitySet Name="Подразделения" EntityType="PelengModel.Подразделения" />
+          <EntitySet Name="Профили" EntityType="PelengModel.Профили" />
+          <EntitySet Name="СборкаВспМатериал" EntityType="PelengModel.СборкаВспМатериал" />
+          <EntitySet Name="Сборки" EntityType="PelengModel.Сборки" />
+          <EntitySet Name="СборкиДетали" EntityType="PelengModel.СборкиДетали" />
+          <AssociationSet Name="FK__СборкаВсп__ВспМа__2D27B809" Association="PelengModel.FK__СборкаВсп__ВспМа__2D27B809">
+            <End Role="ВспомогательныеМатериалы" EntitySet="ВспомогательныеМатериалы" />
+            <End Role="СборкаВспМатериал" EntitySet="СборкаВспМатериал" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ВходящиеС__Номер__276EDEB3" Association="PelengModel.FK__ВходящиеС__Номер__276EDEB3">
+            <End Role="Сборки" EntitySet="Сборки" />
+            <End Role="ВходящиеСборки" EntitySet="ВходящиеСборки" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Детали__286302EC" Association="PelengModel.FK__Детали__286302EC">
+            <End Role="Маршруты" EntitySet="Маршруты" />
+            <End Role="Детали" EntitySet="Детали" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Детали__Материал__29572725" Association="PelengModel.FK__Детали__Материал__29572725">
+            <End Role="Материалы" EntitySet="Материалы" />
+            <End Role="Детали" EntitySet="Детали" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СборкиДет__Номер__300424B4" Association="PelengModel.FK__СборкиДет__Номер__300424B4">
+            <End Role="Детали" EntitySet="Детали" />
+            <End Role="СборкиДетали" EntitySet="СборкиДетали" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Материалы__Марка__2C3393D0" Association="PelengModel.FK__Материалы__Марка__2C3393D0">
+            <End Role="МаркиМатериала" EntitySet="МаркиМатериала" />
+            <End Role="Материалы" EntitySet="Материалы" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Маршруты__НомерП__2A4B4B5E" Association="PelengModel.FK__Маршруты__НомерП__2A4B4B5E">
+            <End Role="Подразделения" EntitySet="Подразделения" />
+            <End Role="Маршруты" EntitySet="Маршруты" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Сборки__2F10007B" Association="PelengModel.FK__Сборки__2F10007B">
+            <End Role="Маршруты" EntitySet="Маршруты" />
+            <End Role="Сборки" EntitySet="Сборки" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Материалы__Профи__2B3F6F97" Association="PelengModel.FK__Материалы__Профи__2B3F6F97">
+            <End Role="Профили" EntitySet="Профили" />
+            <End Role="Материалы" EntitySet="Материалы" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СборкаВсп__Номер__2E1BDC42" Association="PelengModel.FK__СборкаВсп__Номер__2E1BDC42">
+            <End Role="Сборки" EntitySet="Сборки" />
+            <End Role="СборкаВспМатериал" EntitySet="СборкаВспМатериал" />
+          </AssociationSet>
+          <AssociationSet Name="FK__СборкиДет__Номер__30F848ED" Association="PelengModel.FK__СборкиДет__Номер__30F848ED">
+            <End Role="Сборки" EntitySet="Сборки" />
+            <End Role="СборкиДетали" EntitySet="СборкиДетали" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ВспомогательныеМатериалы">
+          <Key>
+            <PropertyRef Name="ВспМатериалID" />
+          </Key>
+          <Property Name="Наименование" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ВспМатериалID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Плотность" Type="Double" Nullable="false" />
+          <NavigationProperty Name="СборкаВспМатериал" Relationship="PelengModel.FK__СборкаВсп__ВспМа__2D27B809" FromRole="ВспомогательныеМатериалы" ToRole="СборкаВспМатериал" />
+        </EntityType>
+        <EntityType Name="ВходящиеСборки">
+          <Key>
+            <PropertyRef Name="НомерВхСборки" />
+            <PropertyRef Name="НомерСборки" />
+          </Key>
+          <Property Name="НомерВхСборки" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="НомерСборки" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Количество" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Сборки" Relationship="PelengModel.FK__ВходящиеС__Номер__276EDEB3" FromRole="ВходящиеСборки" ToRole="Сборки" />
+        </EntityType>
+        <EntityType Name="Детали">
+          <Key>
+            <PropertyRef Name="НомерДетали" />
+          </Key>
+          <Property Name="Наименование" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="НомерДетали" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="МатериалID" Type="Int32" Nullable="false" />
+          <Property Name="НормаРасхода" Type="Double" Nullable="false" />
+          <Property Name="ВыходДеталей" Type="Int32" Nullable="false" />
+          <Property Name="ДлинаЗаготовки" Type="Double" Nullable="false" />
+          <Property Name="ШиринаЗаготовки" Type="Double" />
+          <Property Name="ПорядковыйНомер" Type="Int32" />
+          <Property Name="МаршрутID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Маршруты" Relationship="PelengModel.FK__Детали__286302EC" FromRole="Детали" ToRole="Маршруты" />
+          <NavigationProperty Name="Материалы" Relationship="PelengModel.FK__Детали__Материал__29572725" FromRole="Детали" ToRole="Материалы" />
+          <NavigationProperty Name="СборкиДетали" Relationship="PelengModel.FK__СборкиДет__Номер__300424B4" FromRole="Детали" ToRole="СборкиДетали" />
+        </EntityType>
+        <EntityType Name="МаркиМатериала">
+          <Key>
+            <PropertyRef Name="МаркаID" />
+          </Key>
+          <Property Name="НаименованиеМарки" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="МаркаID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Плотность" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Материалы" Relationship="PelengModel.FK__Материалы__Марка__2C3393D0" FromRole="МаркиМатериала" ToRole="Материалы" />
+        </EntityType>
+        <EntityType Name="Маршруты">
+          <Key>
+            <PropertyRef Name="ПорядковыйНомер" />
+            <PropertyRef Name="МаршрутID" />
+          </Key>
+          <Property Name="ПорядковыйНомер" Type="Int32" Nullable="false" />
+          <Property Name="МаршрутID" Type="Int32" Nullable="false" />
+          <Property Name="НомерПодразделения" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Детали" Relationship="PelengModel.FK__Детали__286302EC" FromRole="Маршруты" ToRole="Детали" />
+          <NavigationProperty Name="Подразделения" Relationship="PelengModel.FK__Маршруты__НомерП__2A4B4B5E" FromRole="Маршруты" ToRole="Подразделения" />
+          <NavigationProperty Name="Сборки" Relationship="PelengModel.FK__Сборки__2F10007B" FromRole="Маршруты" ToRole="Сборки" />
+        </EntityType>
+        <EntityType Name="Материалы">
+          <Key>
+            <PropertyRef Name="МатериалID" />
+          </Key>
+          <Property Name="НаименованиеМатериала" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="МатериалID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Габарит" Type="Double" Nullable="false" />
+          <Property Name="Ширина" Type="Int32" />
+          <Property Name="Длина" Type="Int32" />
+          <Property Name="МаркаID" Type="Int32" />
+          <Property Name="ПрофильID" Type="Int32" />
+          <NavigationProperty Name="Детали" Relationship="PelengModel.FK__Детали__Материал__29572725" FromRole="Материалы" ToRole="Детали" />
+          <NavigationProperty Name="МаркиМатериала" Relationship="PelengModel.FK__Материалы__Марка__2C3393D0" FromRole="Материалы" ToRole="МаркиМатериала" />
+          <NavigationProperty Name="Профили" Relationship="PelengModel.FK__Материалы__Профи__2B3F6F97" FromRole="Материалы" ToRole="Профили" />
+        </EntityType>
+        <EntityType Name="Подразделения">
+          <Key>
+            <PropertyRef Name="НомерПодразделения" />
+          </Key>
+          <Property Name="НазваниеУчастка" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="НомерПодразделения" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Маршруты" Relationship="PelengModel.FK__Маршруты__НомерП__2A4B4B5E" FromRole="Подразделения" ToRole="Маршруты" />
+        </EntityType>
+        <EntityType Name="Профили">
+          <Key>
+            <PropertyRef Name="ПрофильID" />
+          </Key>
+          <Property Name="ВидПрофиля" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ПрофильID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Материалы" Relationship="PelengModel.FK__Материалы__Профи__2B3F6F97" FromRole="Профили" ToRole="Материалы" />
+        </EntityType>
+        <EntityType Name="СборкаВспМатериал">
+          <Key>
+            <PropertyRef Name="НомерСборки" />
+            <PropertyRef Name="ВспМатериалID" />
+          </Key>
+          <Property Name="НомерСборки" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="НормаРасхода" Type="Double" Nullable="false" />
+          <Property Name="ВспМатериалID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ВспомогательныеМатериалы" Relationship="PelengModel.FK__СборкаВсп__ВспМа__2D27B809" FromRole="СборкаВспМатериал" ToRole="ВспомогательныеМатериалы" />
+          <NavigationProperty Name="Сборки" Relationship="PelengModel.FK__СборкаВсп__Номер__2E1BDC42" FromRole="СборкаВспМатериал" ToRole="Сборки" />
+        </EntityType>
+        <EntityType Name="Сборки">
+          <Key>
+            <PropertyRef Name="НомерСборки" />
+          </Key>
+          <Property Name="Наименование" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="НомерСборки" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ПорядковыйНомер" Type="Int32" />
+          <Property Name="МаршрутID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ВходящиеСборки" Relationship="PelengModel.FK__ВходящиеС__Номер__276EDEB3" FromRole="Сборки" ToRole="ВходящиеСборки" />
+          <NavigationProperty Name="Маршруты" Relationship="PelengModel.FK__Сборки__2F10007B" FromRole="Сборки" ToRole="Маршруты" />
+          <NavigationProperty Name="СборкаВспМатериал" Relationship="PelengModel.FK__СборкаВсп__Номер__2E1BDC42" FromRole="Сборки" ToRole="СборкаВспМатериал" />
+          <NavigationProperty Name="СборкиДетали" Relationship="PelengModel.FK__СборкиДет__Номер__30F848ED" FromRole="Сборки" ToRole="СборкиДетали" />
+        </EntityType>
+        <EntityType Name="СборкиДетали">
+          <Key>
+            <PropertyRef Name="НомерДетали" />
+            <PropertyRef Name="НомерСборки" />
+          </Key>
+          <Property Name="НомерДетали" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Количество" Type="Int32" Nullable="false" />
+          <Property Name="НомерСборки" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Детали" Relationship="PelengModel.FK__СборкиДет__Номер__300424B4" FromRole="СборкиДетали" ToRole="Детали" />
+          <NavigationProperty Name="Сборки" Relationship="PelengModel.FK__СборкиДет__Номер__30F848ED" FromRole="СборкиДетали" ToRole="Сборки" />
+        </EntityType>
+        <Association Name="FK__СборкаВсп__ВспМа__2D27B809">
+          <End Role="ВспомогательныеМатериалы" Type="PelengModel.ВспомогательныеМатериалы" Multiplicity="1" />
+          <End Role="СборкаВспМатериал" Type="PelengModel.СборкаВспМатериал" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ВспомогательныеМатериалы">
+              <PropertyRef Name="ВспМатериалID" />
+            </Principal>
+            <Dependent Role="СборкаВспМатериал">
+              <PropertyRef Name="ВспМатериалID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ВходящиеС__Номер__276EDEB3">
+          <End Role="Сборки" Type="PelengModel.Сборки" Multiplicity="1" />
+          <End Role="ВходящиеСборки" Type="PelengModel.ВходящиеСборки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сборки">
+              <PropertyRef Name="НомерСборки" />
+            </Principal>
+            <Dependent Role="ВходящиеСборки">
+              <PropertyRef Name="НомерСборки" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Детали__286302EC">
+          <End Role="Маршруты" Type="PelengModel.Маршруты" Multiplicity="0..1" />
+          <End Role="Детали" Type="PelengModel.Детали" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Маршруты">
+              <PropertyRef Name="ПорядковыйНомер" />
+              <PropertyRef Name="МаршрутID" />
+            </Principal>
+            <Dependent Role="Детали">
+              <PropertyRef Name="ПорядковыйНомер" />
+              <PropertyRef Name="МаршрутID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Детали__Материал__29572725">
+          <End Role="Материалы" Type="PelengModel.Материалы" Multiplicity="1" />
+          <End Role="Детали" Type="PelengModel.Детали" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Материалы">
+              <PropertyRef Name="МатериалID" />
+            </Principal>
+            <Dependent Role="Детали">
+              <PropertyRef Name="МатериалID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СборкиДет__Номер__300424B4">
+          <End Role="Детали" Type="PelengModel.Детали" Multiplicity="1" />
+          <End Role="СборкиДетали" Type="PelengModel.СборкиДетали" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Детали">
+              <PropertyRef Name="НомерДетали" />
+            </Principal>
+            <Dependent Role="СборкиДетали">
+              <PropertyRef Name="НомерДетали" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Материалы__Марка__2C3393D0">
+          <End Role="МаркиМатериала" Type="PelengModel.МаркиМатериала" Multiplicity="0..1" />
+          <End Role="Материалы" Type="PelengModel.Материалы" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="МаркиМатериала">
+              <PropertyRef Name="МаркаID" />
+            </Principal>
+            <Dependent Role="Материалы">
+              <PropertyRef Name="МаркаID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Маршруты__НомерП__2A4B4B5E">
+          <End Role="Подразделения" Type="PelengModel.Подразделения" Multiplicity="1" />
+          <End Role="Маршруты" Type="PelengModel.Маршруты" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Подразделения">
+              <PropertyRef Name="НомерПодразделения" />
+            </Principal>
+            <Dependent Role="Маршруты">
+              <PropertyRef Name="НомерПодразделения" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Сборки__2F10007B">
+          <End Role="Маршруты" Type="PelengModel.Маршруты" Multiplicity="0..1" />
+          <End Role="Сборки" Type="PelengModel.Сборки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Маршруты">
+              <PropertyRef Name="ПорядковыйНомер" />
+              <PropertyRef Name="МаршрутID" />
+            </Principal>
+            <Dependent Role="Сборки">
+              <PropertyRef Name="ПорядковыйНомер" />
+              <PropertyRef Name="МаршрутID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Материалы__Профи__2B3F6F97">
+          <End Role="Профили" Type="PelengModel.Профили" Multiplicity="0..1" />
+          <End Role="Материалы" Type="PelengModel.Материалы" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Профили">
+              <PropertyRef Name="ПрофильID" />
+            </Principal>
+            <Dependent Role="Материалы">
+              <PropertyRef Name="ПрофильID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СборкаВсп__Номер__2E1BDC42">
+          <End Role="Сборки" Type="PelengModel.Сборки" Multiplicity="1" />
+          <End Role="СборкаВспМатериал" Type="PelengModel.СборкаВспМатериал" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сборки">
+              <PropertyRef Name="НомерСборки" />
+            </Principal>
+            <Dependent Role="СборкаВспМатериал">
+              <PropertyRef Name="НомерСборки" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__СборкиДет__Номер__30F848ED">
+          <End Role="Сборки" Type="PelengModel.Сборки" Multiplicity="1" />
+          <End Role="СборкиДетали" Type="PelengModel.СборкиДетали" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сборки">
+              <PropertyRef Name="НомерСборки" />
+            </Principal>
+            <Dependent Role="СборкиДетали">
+              <PropertyRef Name="НомерСборки" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PelengModelStoreContainer" CdmEntityContainer="PelengEntities">
+          <EntitySetMapping Name="ВспомогательныеМатериалы">
+            <EntityTypeMapping TypeName="PelengModel.ВспомогательныеМатериалы">
+              <MappingFragment StoreEntitySet="ВспомогательныеМатериалы">
+                <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+                <ScalarProperty Name="ВспМатериалID" ColumnName="ВспМатериалID" />
+                <ScalarProperty Name="Плотность" ColumnName="Плотность" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ВходящиеСборки">
+            <EntityTypeMapping TypeName="PelengModel.ВходящиеСборки">
+              <MappingFragment StoreEntitySet="ВходящиеСборки">
+                <ScalarProperty Name="НомерВхСборки" ColumnName="НомерВхСборки" />
+                <ScalarProperty Name="НомерСборки" ColumnName="НомерСборки" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Детали">
+            <EntityTypeMapping TypeName="PelengModel.Детали">
+              <MappingFragment StoreEntitySet="Детали">
+                <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+                <ScalarProperty Name="НомерДетали" ColumnName="НомерДетали" />
+                <ScalarProperty Name="МатериалID" ColumnName="МатериалID" />
+                <ScalarProperty Name="НормаРасхода" ColumnName="НормаРасхода" />
+                <ScalarProperty Name="ВыходДеталей" ColumnName="ВыходДеталей" />
+                <ScalarProperty Name="ДлинаЗаготовки" ColumnName="ДлинаЗаготовки" />
+                <ScalarProperty Name="ШиринаЗаготовки" ColumnName="ШиринаЗаготовки" />
+                <ScalarProperty Name="ПорядковыйНомер" ColumnName="ПорядковыйНомер" />
+                <ScalarProperty Name="МаршрутID" ColumnName="МаршрутID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="МаркиМатериала">
+            <EntityTypeMapping TypeName="PelengModel.МаркиМатериала">
+              <MappingFragment StoreEntitySet="МаркиМатериала">
+                <ScalarProperty Name="НаименованиеМарки" ColumnName="НаименованиеМарки" />
+                <ScalarProperty Name="МаркаID" ColumnName="МаркаID" />
+                <ScalarProperty Name="Плотность" ColumnName="Плотность" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Маршруты">
+            <EntityTypeMapping TypeName="PelengModel.Маршруты">
+              <MappingFragment StoreEntitySet="Маршруты">
+                <ScalarProperty Name="ПорядковыйНомер" ColumnName="ПорядковыйНомер" />
+                <ScalarProperty Name="МаршрутID" ColumnName="МаршрутID" />
+                <ScalarProperty Name="НомерПодразделения" ColumnName="НомерПодразделения" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Материалы">
+            <EntityTypeMapping TypeName="PelengModel.Материалы">
+              <MappingFragment StoreEntitySet="Материалы">
+                <ScalarProperty Name="НаименованиеМатериала" ColumnName="НаименованиеМатериала" />
+                <ScalarProperty Name="МатериалID" ColumnName="МатериалID" />
+                <ScalarProperty Name="Габарит" ColumnName="Габарит" />
+                <ScalarProperty Name="Ширина" ColumnName="Ширина" />
+                <ScalarProperty Name="Длина" ColumnName="Длина" />
+                <ScalarProperty Name="МаркаID" ColumnName="МаркаID" />
+                <ScalarProperty Name="ПрофильID" ColumnName="ПрофильID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Подразделения">
+            <EntityTypeMapping TypeName="PelengModel.Подразделения">
+              <MappingFragment StoreEntitySet="Подразделения">
+                <ScalarProperty Name="НазваниеУчастка" ColumnName="НазваниеУчастка" />
+                <ScalarProperty Name="НомерПодразделения" ColumnName="НомерПодразделения" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Профили">
+            <EntityTypeMapping TypeName="PelengModel.Профили">
+              <MappingFragment StoreEntitySet="Профили">
+                <ScalarProperty Name="ВидПрофиля" ColumnName="ВидПрофиля" />
+                <ScalarProperty Name="ПрофильID" ColumnName="ПрофильID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="СборкаВспМатериал">
+            <EntityTypeMapping TypeName="PelengModel.СборкаВспМатериал">
+              <MappingFragment StoreEntitySet="СборкаВспМатериал">
+                <ScalarProperty Name="НомерСборки" ColumnName="НомерСборки" />
+                <ScalarProperty Name="НормаРасхода" ColumnName="НормаРасхода" />
+                <ScalarProperty Name="ВспМатериалID" ColumnName="ВспМатериалID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Сборки">
+            <EntityTypeMapping TypeName="PelengModel.Сборки">
+              <MappingFragment StoreEntitySet="Сборки">
+                <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+                <ScalarProperty Name="НомерСборки" ColumnName="НомерСборки" />
+                <ScalarProperty Name="ПорядковыйНомер" ColumnName="ПорядковыйНомер" />
+                <ScalarProperty Name="МаршрутID" ColumnName="МаршрутID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="СборкиДетали">
+            <EntityTypeMapping TypeName="PelengModel.СборкиДетали">
+              <MappingFragment StoreEntitySet="СборкиДетали">
+                <ScalarProperty Name="НомерДетали" ColumnName="НомерДетали" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="НомерСборки" ColumnName="НомерСборки" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PelengDB" ZoomLevel="64">
+        <EntityTypeShape EntityType="PelengModel.ВспомогательныеМатериалы" Width="1.5" PointX="5.25" PointY="1.375" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.ВходящиеСборки" Width="1.5" PointX="7.5" PointY="9.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.Детали" Width="1.5" PointX="5.25" PointY="4.5" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.МаркиМатериала" Width="1.5" PointX="0.75" PointY="2.75" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.Маршруты" Width="1.5" PointX="3" PointY="5.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.Материалы" Width="1.5" PointX="3" PointY="0.75" Height="2.9417936197916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.Подразделения" Width="1.5" PointX="0.75" PointY="5.375" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.Профили" Width="1.5" PointX="0.75" PointY="8.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.СборкаВспМатериал" Width="1.5" PointX="7.5" PointY="6.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.Сборки" Width="1.5" PointX="5.25" PointY="9" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="PelengModel.СборкиДетали" Width="1.5" PointX="10.5" PointY="7.125" Height="1.9802864583333353" IsExpanded="true" />
+        <AssociationConnector Association="PelengModel.FK__СборкаВсп__ВспМа__2D27B809" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="2.2689925130208337" />
+          <ConnectorPoint PointX="8.25" PointY="2.2689925130208337" />
+          <ConnectorPoint PointX="8.25" PointY="6.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__ВходящиеС__Номер__276EDEB3" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="10.268992513020834" />
+          <ConnectorPoint PointX="7.5" PointY="10.268992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__Детали__286302EC" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="6.2112939453125" />
+          <ConnectorPoint PointX="5.25" PointY="6.2112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__Детали__Материал__29572725" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="3.6917936197916665" />
+          <ConnectorPoint PointX="4.875" PointY="4.0667936197916665" />
+          <ConnectorPoint PointX="4.875" PointY="5.3243949726562487" />
+          <ConnectorPoint PointX="5.25" PointY="5.3243949726562487" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__СборкиДет__Номер__300424B4" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="5.34375" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="5.3437499999999991" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="5.34375" />
+          <ConnectorPoint PointX="11.25" PointY="5.34375" />
+          <ConnectorPoint PointX="11.25" PointY="7.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__Материалы__Марка__2C3393D0" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.2208968098958333" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="3.2208968098958328" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="3.2208968098958333" />
+          <ConnectorPoint PointX="3" PointY="3.2208968098958333" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__Маршруты__НомерП__2A4B4B5E" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.172841796875" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="6.1728417968749989" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.172841796875" />
+          <ConnectorPoint PointX="3" PointY="6.172841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__Сборки__2F10007B" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="7.297587890625" />
+          <ConnectorPoint PointX="3.75" PointY="10.278595377604166" />
+          <ConnectorPoint PointX="5.25" PointY="10.278595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__Материалы__Профи__2B3F6F97" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.2511528461538468" />
+          <ConnectorPoint PointX="2.625" PointY="7.8761528461538468" />
+          <ConnectorPoint PointX="2.625" PointY="1.9541964049479157" />
+          <ConnectorPoint PointX="3" PointY="1.9541964049479157" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__СборкаВсп__Номер__2E1BDC42" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="9.0011528461538468" />
+          <ConnectorPoint PointX="7.125" PointY="8.6261528461538468" />
+          <ConnectorPoint PointX="7.125" PointY="7.2401432291666659" />
+          <ConnectorPoint PointX="7.5" PointY="7.2401432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="PelengModel.FK__СборкиДет__Номер__30F848ED" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="11.391337890625" />
+          <ConnectorPoint PointX="11.25" PointY="11.391337890625" />
+          <ConnectorPoint PointX="11.25" PointY="9.1052864583333353" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

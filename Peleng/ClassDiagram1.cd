@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Peleng.addAssembly">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAAIBEAAACAAIAGAAAAAEAAAAAAAAACAAA=</HashCode>
+      <FileName>addAssembly.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.computeRate">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UQEBAEHAACBEMBCAAFCgogACBWAXABCgGyJiAIEBBQA=</HashCode>
+      <FileName>computeRate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Детали" BaseTypeListCollapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>goIAAAEEAIEAIAYYEwACZaAoABAAAixAMxgkAKAEAAA=</HashCode>
+      <FileName>computeRate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Peleng.ItemMaterial">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YEAAAGCAFCAABBAAAECIIgDCBGCAAJggEoIAEBJBAAA=</HashCode>
+      <FileName>ItemMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.listMaterial">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QECAAYAAACAAIAEAAACAAQACAAwBIACoAKQAgAFAAAg=</HashCode>
+      <FileName>listMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.mainForm">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYACBA0AAKAAAAFQAEKFEgZCCAAhEIgREAgIwAECIAU=</HashCode>
+      <FileName>mainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.PelengDataSet">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Peleng.PelengDataSet.МаркиМатериалаRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="Peleng.PelengDataSet.ВходящиеСборкиRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Peleng.PelengDataSet.МаркиМатериалаDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Peleng.PelengDataSet.ВходящиеСборкиDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Peleng.PelengDataSet.МаркиМатериалаRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Peleng.PelengDataSet.ВходящиеСборкиRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Peleng.PelengDataSet.МаркиМатериалаRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Peleng.PelengDataSet.ВходящиеСборкиRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAQAAJABACAQAgAAAgCQJgAAAAAAAEIBBA=</HashCode>
+      <FileName>PelengDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.PelengEntities">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CgYAIQECAAAQAFAhQAQAQAwAIRAkAgAQACACgQAIAIg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.ВспомогательныеМатериалы">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAEAABBAgAAAAEAEAAAIIAIAgAAACAAAAAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.ВходящиеСборки">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAQAAAAAEAAgAAAIESAAAAAAQAAAAgACAAAAAIAAQg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.МаркиМатериала">
+    <Position X="7.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AaAAAAAIAgAABAkIAAAAQAIAAAAAIAAAEAAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Маршруты">
+    <Position X="5.75" Y="12" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAKABAAAAAAAYBBAQAACAQABAAAgQAEgCgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Материалы">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAAQEIiAAAABBALCCgAJEAQCAgAQABCUAAkAiAMAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Подразделения">
+    <Position X="11" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoACgBAAAAAAAQABAAAAAAAAgAAAAAAAAAIABAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Профили">
+    <Position X="0.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAQAAAICAAACAgAQEAAABAAAAAAAAAAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.СборкаВспМатериал">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggQEAAEBAIAAggAAAASAAAAAAgAAACAACQAAAAAIAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Сборки">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEIAAAEAAAAQgAIAEgCAIKAIABAAAgQAGgAgAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.СборкиДетали">
+    <Position X="14.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAAEAEEBgAABAESAAAAAAQAAIAgACBAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Program">
+    <Position X="16.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.specificationEnterNumber">
+    <Position X="4" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACAAIAEAAACAAIACAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>specificationEnterNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.specificationForm">
+    <Position X="18" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAQAECAAQACAAwAEAAAAAQACCQACAg=</HashCode>
+      <FileName>specificationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.specificationWork">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkgwGCAECWEYAABAEDAATgSBOwIABABJG4ACIKIAAk=</HashCode>
+      <FileName>specificationWork.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.PelengDataSetTableAdapters.МаркиМатериалаTableAdapter">
+    <Position X="9.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EACAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.PelengDataSetTableAdapters.ВходящиеСборкиTableAdapter">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACAICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.PelengDataSetTableAdapters.TableAdapterManager">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Peleng.PelengDataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+      <Class Name="Peleng.PelengDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AwAAACAAAABABBEBAAAAMAAgAAACgAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Properties.Resources">
+    <Position X="11" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Peleng.Properties.Settings">
+    <Position X="12.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAgBAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
